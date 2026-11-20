@@ -1,0 +1,27 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "enerpilot-ml"
+version = "0.1.0"
+description = "AI and ML microservice for the EnerPilot industrial energy intelligence platform"
+requires-python = ">=3.10"
+dependencies = [
+  "pandas>=2.0.0",
+  "numpy>=1.26.0",
+  "scikit-learn>=1.4.0",
+  "fastapi>=0.115.0",
+  "uvicorn>=0.30.0",
+  "pydantic>=2.4.0",
+  "httpx>=0.27.0",
+]
+
+[project.optional-dependencies]
+dev = [
+  "pytest>=8.0.0",
+]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["."]
